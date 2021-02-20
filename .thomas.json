@@ -1,0 +1,13 @@
+{
+  "duration": 50,
+  "breakDuration": 10,
+  "trayIcon": false,
+  "progressBar": true,
+  "darkMode": true,
+  "followSystemAppearance": true,
+  "shortcuts": {
+    "hideWindow": "Escape",
+    "showWindow": "CommandOrControl+Alt+T",
+    "startTimer": "CommandOrControl+Enter"
+  }
+}
