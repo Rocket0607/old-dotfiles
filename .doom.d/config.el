@@ -30,7 +30,7 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
 
-(use-package! highlight-indent-guides
+(use-package highlight-indent-guides
   :commands highlight-indent-guides-mode
   :hook (prog-mode . highlight-indent-guides-mode)
   :config
@@ -43,10 +43,11 @@
 (use-package company-tabnine :ensure t)
 (add-to-list 'company-backends #'company-tabnine)
 
+(general-evil-define-key 'normal 'global :prefix "SPC" "r" 'flutter-hot-reload)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Documents/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
