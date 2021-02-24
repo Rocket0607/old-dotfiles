@@ -134,7 +134,7 @@ keys = [
              desc='open ranger file manager'
              ),
         Key([mod], "e",
-            lazy.spawn("emacs"),
+            lazy.spawn("emacsclient -c"),
             desc="open doom emacs"
             )
 ]
@@ -166,11 +166,11 @@ layouts = [
     #layout.Columns(**layout_theme),
     #layout.RatioTile(**layout_theme),
     #layout.VerticalTile(**layout_theme),
-    layout.Matrix(**layout_theme),
+    #layout.Matrix(**layout_theme),
     layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
-    layout.Tile(shift_windows=True, **layout_theme),
+    #layout.Tile(shift_windows=True, **layout_theme),
     #layout.Stack(num_stacks=2),
     #layout.TreeTab(
     #     font = "Ubuntu",
@@ -305,7 +305,7 @@ def init_widgets_list():
                        background = colors[4],
                        fontsize = 14
                        ),
-              widget.Pacman(
+              widget.CheckUpdates(
                        update_interval = 1800,
                        foreground = colors[2],
                        mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
@@ -465,7 +465,7 @@ def init_widgets_screen2():
     return widgets_screen2                       # Monitor 2 will display all widgets in widgets_list
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=24, margin=[0,2,0,2])),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=0.9, size=24, margin=[0,0,0,0])),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20)),
             Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))]
 
